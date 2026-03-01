@@ -7,8 +7,7 @@ public class Autor {
     private String nacionalidade;
     private String dataNascimento;
 
-    public Autor() {
-    }
+    public Autor() {}
 
     public Autor(Long id, String nome, String nacionalidade, String dataNascimento) {
         this.id = id;

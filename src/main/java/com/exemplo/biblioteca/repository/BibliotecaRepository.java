@@ -45,7 +45,8 @@ public class BibliotecaRepository {
     public List<Livro> findByTitulo(String titulo) {
         String termo = titulo.toLowerCase();
         return livros.stream()
-                .filter(livro -> livro.getTitulo() != null && livro.getTitulo().toLowerCase().contains(termo))
+                .filter(livro -> livro.getTitulo() != null &&
+                        livro.getTitulo().toLowerCase().contains(termo))
                 .toList();
     }
 

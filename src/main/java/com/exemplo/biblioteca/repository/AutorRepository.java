@@ -37,11 +37,19 @@ public class AutorRepository {
 
     public Optional<Autor> findById(Long id) {
         return autores.stream()
-                .filter(autor -> autor.getId().equals(id))
+                .filter(a -> a.getId().equals(id))
                 .findFirst();
     }
 
     public void deleteById(Long id) {
-        autores.removeIf(autor -> autor.getId().equals(id));
+        autores.removeIf(a -> a.getId().equals(id));
+    }
+
+    // 🔥 NOVO - Buscar por nome
+    public List<Autor> findByNome(String nome) {
+        return autores.stream()
+                .filter(a -> a.getNome().toLowerCase()
+                        .contains(nome.toLowerCase()))
+                .toList();
     }
 }
